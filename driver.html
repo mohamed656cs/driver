@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Weghat Al Sharq Driver</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Cairo',sans-serif;
+}
+
+body{
+    min-height:100dvh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    overflow-x:hidden;
+    background:radial-gradient(circle at top,#3b1b16,#111 45%,#070707 100%);
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    width:650px;
+    height:650px;
+    background:#FF421C;
+    border-radius:50%;
+    filter:blur(180px);
+    opacity:.22;
+    top:-220px;
+    right:-180px;
+    animation:move1 10s ease-in-out infinite alternate;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#fff;
+    border-radius:50%;
+    filter:blur(200px);
+    opacity:.08;
+    left:-180px;
+    bottom:-180px;
+    animation:move2 12s ease-in-out infinite alternate;
+    z-index:-2;
+}
+
+@keyframes move1{
+from{transform:translateY(0);}
+to{transform:translateY(80px);}
+}
+
+@keyframes move2{
+from{transform:translateX(0);}
+to{transform:translateX(80px);}
+}
+
+.card{
+    width:min(92vw,410px);
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:34px;
+    padding:38px 26px;
+    text-align:center;
+    box-shadow:
+    0 35px 80px rgba(0,0,0,.65),
+    inset 0 1px rgba(255,255,255,.08);
+    animation:show .8s ease;
+}
+
+@keyframes show{
+from{
+opacity:0;
+transform:translateY(30px) scale(.96);
+}
+to{
+opacity:1;
+transform:none;
+}
+}
+
+.logo-box{
+    width:145px;
+    height:145px;
+    margin:auto;
+    border-radius:50%;
+    background:linear-gradient(145deg,#FF421C,#ff6a4b);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:
+    0 0 35px rgba(255,66,28,.45),
+    0 0 70px rgba(255,66,28,.25);
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+}
+
+.logo{
+    width:105px;
+    height:105px;
+    object-fit:contain;
+    filter:drop-shadow(0 8px 18px rgba(0,0,0,.45));
+}
+
+h1{
+    color:#fff;
+    margin-top:28px;
+    font-size:32px;
+    font-weight:800;
+}
+
+.desc{
+    color:#d8d8d8;
+    margin-top:14px;
+    line-height:2;
+    font-size:15px;
+}
+
+.download{
+    margin-top:32px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:62px;
+    text-decoration:none;
+    color:#fff;
+    font-size:21px;
+    font-weight:800;
+    border-radius:18px;
+    background:#FF421C;
+    position:relative;
+    overflow:hidden;
+    transition:.35s;
+    box-shadow:0 18px 45px rgba(255,66,28,.45);
+}
+
+.download::before{
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:70%;
+height:100%;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.65),transparent);
+transform:skewX(-25deg);
+transition:.8s;
+}
+
+.download:hover{
+background:#ff2c00;
+transform:translateY(-4px);
+box-shadow:0 22px 55px rgba(255,66,28,.55);
+}
+
+.download:hover::before{
+left:150%;
+}
+
+.info{
+margin-top:28px;
+display:flex;
+gap:12px;
+}
+
+.box{
+flex:1;
+padding:14px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+border-radius:15px;
+color:#fff;
+font-size:15px;
+}
+
+.box span{
+display:block;
+margin-top:5px;
+color:#FF421C;
+font-weight:800;
+}
+
+.footer{
+margin-top:24px;
+color:#bdbdbd;
+font-size:13px;
+}
+
+@media(max-width:480px){
+
+.card{
+padding:30px 20px;
+}
+
+.logo-box{
+width:125px;
+height:125px;
+}
+
+.logo{
+width:90px;
+height:90px;
+}
+
+h1{
+font-size:28px;
+}
+
+.desc{
+font-size:14px;
+}
+
+.download{
+height:58px;
+font-size:19px;
+}
+
+.info{
+flex-direction:column;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo-box">
+
+<img class="logo"
+src="https://i.postimg.cc/MZnB8B1p/IMG-20260625-161150.png"
+alt="Logo">
+
+</div>
+
+<h1>Weghat Al Sharq Driver</h1>
+
+<p class="desc">
+Download the latest version of the driver application and enjoy better performance, improved stability and the newest features.
+</p>
+
+<a class="download"
+href="http://185.122.164.152:8000">
+Download
+</a>
+
+<div class="info">
+
+<div class="box">
+Android
+<span>7.0+</span>
+</div>
+
+<div class="box">
+Version
+<span>1.0.0</span>
+</div>
+
+</div>
+
+<div class="footer">
+© 2026 Weghat Al Sharq. All Rights Reserved.
+</div>
+
+</div>
+
+</body>
+
+</html>
